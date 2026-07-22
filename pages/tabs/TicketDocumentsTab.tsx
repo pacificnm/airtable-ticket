@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { AirtableRecord, useInspectAttrs } from '../lib/airtable-hooks';
-import { DOC_STATUS_COLORS } from '../types';
-import { timeAgo } from '../utils';
-import { DescriptionIcon, ArticleIcon, ArrowBackIcon } from './Icons';
+import { AirtableRecord, useInspectAttrs } from '../../lib/airtable-hooks';
+import { DOC_STATUS_COLORS } from '../../types';
+import { timeAgo } from '../../utils';
+import { DescriptionIcon, ArticleIcon, ArrowBackIcon } from '../../components/Icons';
 
 export interface TicketDocumentsTabProps {
   documents: AirtableRecord[];

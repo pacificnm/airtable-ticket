@@ -1,6 +1,6 @@
 import React from 'react';
-import { AirtableRecord, useInspectAttrs } from '../lib/airtable-hooks';
-import { timeAgo, formatDateTime } from '../utils';
+import { AirtableRecord, useInspectAttrs } from '../../lib/airtable-hooks';
+import { timeAgo, formatDateTime } from '../../utils';
 import {
   FiberNewIcon,
   SwapHorizIcon,
@@ -13,7 +13,7 @@ import {
   RemoveCircleOutlineIcon,
   HistoryIcon,
   ArrowForwardIcon,
-} from './Icons';
+} from '../../components/Icons';
 
 const ACTION_CONFIG: Record<string, { icon: React.ReactNode; color: string }> = {
   'Created': { icon: <FiberNewIcon size={16} />, color: '#003F2D' },

@@ -6,10 +6,10 @@ import {
   useUpdateRecord,
   useDeleteRecord,
   useInspectAttrs,
-} from '../lib/airtable-hooks';
-import { useSnackbar } from './SnackbarProvider';
-import { RoleGuard } from './RoleGuard';
-import { AddIcon, EditIcon, DeleteIcon, CloseIcon, CheckCircleIcon } from './Icons';
+} from '../../lib/airtable-hooks';
+import { useSnackbar } from '../../components/SnackbarProvider';
+import { RoleGuard } from '../../components/RoleGuard';
+import { AddIcon, EditIcon, DeleteIcon, CloseIcon, CheckCircleIcon } from '../../components/Icons';
 
 const TASK_STATUS_COLORS: Record<string, { bg: string; text: string; dot: string }> = {
   'Todo': { bg: '#F2F4F8', text: '#435254', dot: '#999999' },

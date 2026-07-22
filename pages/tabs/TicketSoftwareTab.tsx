@@ -5,11 +5,11 @@ import {
   useUpdateRecord,
   useInspectAttrs,
   getLinkedRecordIds,
-} from '../lib/airtable-hooks';
-import { useLogHistory } from '../hooks/useEventBus';
-import { useSnackbar } from './SnackbarProvider';
-import { RoleGuard } from './RoleGuard';
-import { AddIcon, CloseIcon, SearchIcon, AppsIcon, ArrowBackIcon, CheckCircleIcon, CancelIcon, LinkIcon } from './Icons';
+} from '../../lib/airtable-hooks';
+import { useLogHistory } from '../../hooks/useEventBus';
+import { useSnackbar } from '../../components/SnackbarProvider';
+import { RoleGuard } from '../../components/RoleGuard';
+import { AddIcon, CloseIcon, SearchIcon, AppsIcon, ArrowBackIcon, CheckCircleIcon, CancelIcon, LinkIcon } from '../../components/Icons';
 
 const SOFTWARE_STATUS_COLORS: Record<string, { bg: string; text: string; dot: string }> = {
   'Active': { bg: '#E6FCE8', text: '#006400', dot: '#048A0E' },

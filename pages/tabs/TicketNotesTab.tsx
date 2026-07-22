@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { AirtableRecord, useInspectAttrs } from '../lib/airtable-hooks';
-import { NoteSource, SOURCE_CONFIG } from '../types';
-import { timeAgo } from '../utils';
-import { AddIcon, LockIcon } from './Icons';
-import { RoleGuard, useHasPermission } from './RoleGuard';
+import { AirtableRecord, useInspectAttrs } from '../../lib/airtable-hooks';
+import { NoteSource, SOURCE_CONFIG } from '../../types';
+import { timeAgo } from '../../utils';
+import { AddIcon, LockIcon } from '../../components/Icons';
+import { RoleGuard, useHasPermission } from '../../components/RoleGuard';
 
 export interface TicketNotesTabProps {
   ticketNotes: AirtableRecord[];

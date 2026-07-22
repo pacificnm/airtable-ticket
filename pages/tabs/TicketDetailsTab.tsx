@@ -3,16 +3,16 @@ import {
   AirtableRecord,
   Table,
   useUpdateRecord,
-} from '../lib/airtable-hooks';
-import { ServiceLevel, Technician } from '../types';
-import { calculateSLA, formatDateTime } from '../utils';
-import { SLAIndicator } from './SLAIndicator';
-import { ExternalTicketsSection } from './ExternalTickets';
-import { useSnackbar } from './SnackbarProvider';
-import { useLogHistory, useSendNotification } from '../hooks/useEventBus';
-import { AttachFileIcon, CheckCircleIcon } from './Icons';
-import { RoleGuard, useHasPermission } from './RoleGuard';
-import { TicketStatus } from '../types';
+} from '../../lib/airtable-hooks';
+import { ServiceLevel, Technician } from '../../types';
+import { calculateSLA, formatDateTime } from '../../utils';
+import { SLAIndicator } from '../../components/SLAIndicator';
+import { ExternalTicketsSection } from '../../components/ExternalTickets';
+import { useSnackbar } from '../../components/SnackbarProvider';
+import { useLogHistory, useSendNotification } from '../../hooks/useEventBus';
+import { AttachFileIcon, CheckCircleIcon } from '../../components/Icons';
+import { RoleGuard, useHasPermission } from '../../components/RoleGuard';
+import { TicketStatus } from '../../types';
 
 export interface TicketDetailsTabProps {
   ticket: AirtableRecord;

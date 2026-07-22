@@ -5,11 +5,11 @@ import {
   useUpdateRecord,
   useInspectAttrs,
   getLinkedRecordIds,
-} from '../lib/airtable-hooks';
-import { useLogHistory } from '../hooks/useEventBus';
-import { useSnackbar } from './SnackbarProvider';
-import { RoleGuard } from './RoleGuard';
-import { AddIcon, CloseIcon, SearchIcon, DashboardIcon, OpenInNewIcon, CheckCircleIcon } from './Icons';
+} from '../../lib/airtable-hooks';
+import { useLogHistory } from '../../hooks/useEventBus';
+import { useSnackbar } from '../../components/SnackbarProvider';
+import { RoleGuard } from '../../components/RoleGuard';
+import { AddIcon, CloseIcon, SearchIcon, DashboardIcon, OpenInNewIcon, CheckCircleIcon } from '../../components/Icons';
 
 export interface TicketDashboardsTabProps {
   dashboards: AirtableRecord[];

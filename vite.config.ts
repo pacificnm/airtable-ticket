@@ -28,6 +28,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react()],
     server: {
+      host: true,
       proxy: {
         '/api/airtable-content': airtableAuthProxy('https://content.airtable.com', pat),
         '/api/airtable': airtableAuthProxy('https://api.airtable.com', pat),

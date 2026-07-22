@@ -17,7 +17,7 @@ function App(): React.ReactElement {
   const { base, loading: baseLoading, error: baseError } = useBase();
 
   if (baseLoading) {
-    return <AppLoading />;
+    return <AppLoading label="Loading Service Desk..." />;
   }
 
   if (baseError || !base) {

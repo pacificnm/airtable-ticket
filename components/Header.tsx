@@ -44,7 +44,7 @@ export function Header({ view, onViewChange, onNewTicket, ticketCount, unreadCou
           peopleRecords={peopleRecords}
         />
 
-        <AppBarTitle ticketCount={ticketCount} />
+        <AppBarTitle title="Service Desk" subtitle={`${ticketCount} tickets`} />
 
         <button
           onClick={() => onViewChange('home')}
