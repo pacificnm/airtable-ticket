@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+@import './tokens.css';
+@import './mdxeditor.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Inter', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #F5F7F7;
+  color: #435254;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CAD1D3;
+  border-radius: 0;
+}
+
+.kanban-col {
+  min-height: calc(100vh - 220px);
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideOut {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes toastSlideIn {
+  from { transform: translateY(16px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes toastSlideOut {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(16px); opacity: 0; }
+}
+
+.sidesheet-enter {
+  animation: slideIn 0.25s cubic-bezier(0.75, 0.02, 0.5, 1) forwards;
+}
+
+.sidesheet-exit {
+  animation: slideOut 0.2s ease-in forwards;
+}
+
+.overlay-enter {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.overlay-exit {
+  animation: fadeOut 0.15s ease-in forwards;
+}
+
+.toast-enter {
+  animation: toastSlideIn 0.25s ease-out forwards;
+}
+
+.toast-exit {
+  animation: toastSlideOut 0.2s ease-in forwards;
+}
+
+.mdxeditor-popup-container {
+  z-index: 1400 !important;
+}
+
+.prose-cbre h1,
+.prose-cbre h2,
+.prose-cbre h3,
+.prose-cbre h4,
+.prose-cbre h5,
+.prose-cbre h6 {
+  font-family: 'Noto Serif', Georgia, serif;
+  font-weight: 400;
+  color: #003F2D;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose-cbre h1 { font-size: 1.75rem; }
+.prose-cbre h2 { font-size: 1.375rem; }
+.prose-cbre h3 { font-size: 1.125rem; }
+
+.prose-cbre p {
+  margin-top: 0.5em;
+  margin-bottom: 0.75em;
+  line-height: 1.7;
+  font-size: 0.875rem;
+  color: #435254;
+}
+
+.prose-cbre ul,
+.prose-cbre ol {
+  margin-top: 0.5em;
+  margin-bottom: 0.75em;
+  padding-left: 1.5em;
+}
+
+.prose-cbre li {
+  margin-bottom: 0.25em;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.prose-cbre code {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8125em;
+  background: #F5F7F7;
+  padding: 0.15em 0.4em;
+  border: 1px solid #E6EAEA;
+}
+
+.prose-cbre pre {
+  background: #012A2D;
+  color: #E6EAEA;
+  padding: 1em;
+  overflow-x: auto;
+  margin: 1em 0;
+}
+
+.prose-cbre pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+}
+
+.prose-cbre blockquote {
+  border-left: 3px solid #17E88F;
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  background: #F5F7F7;
+  color: #435254;
+}
+
+.prose-cbre table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 0.8125rem;
+}
+
+.prose-cbre th,
+.prose-cbre td {
+  border: 1px solid #E6EAEA;
+  padding: 0.5em 0.75em;
+  text-align: left;
+}
+
+.prose-cbre th {
+  background: #F5F7F7;
+  font-weight: 600;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666666;
+}
+
+.prose-cbre a {
+  color: #003F2D;
+  text-decoration: underline;
+}
+
+.prose-cbre a:hover {
+  color: #17E88F;
+}
+
+.prose-cbre hr {
+  border: none;
+  border-top: 1px solid #E6EAEA;
+  margin: 1.5em 0;
+}
+
+.prose-cbre img {
+  max-width: 100%;
+  height: auto;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+textarea,
+select {
+  font-family: inherit;
+}
+
+/* ── Rich text editor (contentEditable) ── */
+.prose-editor h1,
+.prose-editor h2,
+.prose-editor h3,
+.prose-editor h4,
+.prose-editor h5,
+.prose-editor h6 {
+  font-family: 'Noto Serif', Georgia, serif;
+  font-weight: 400;
+  color: #003F2D;
+  margin-top: 1.25em;
+  margin-bottom: 0.4em;
+}
+
+.prose-editor h1 { font-size: 1.75rem; }
+.prose-editor h2 { font-size: 1.375rem; }
+.prose-editor h3 { font-size: 1.125rem; }
+
+.prose-editor p {
+  margin-top: 0.4em;
+  margin-bottom: 0.6em;
+  line-height: 1.7;
+}
+
+.prose-editor ul,
+.prose-editor ol {
+  margin-top: 0.4em;
+  margin-bottom: 0.6em;
+  padding-left: 1.5em;
+}
+
+.prose-editor ul { list-style: disc; }
+.prose-editor ol { list-style: decimal; }
+
+.prose-editor li {
+  margin-bottom: 0.2em;
+  line-height: 1.6;
+}
+
+.prose-editor code {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8125em;
+  background: #F5F7F7;
+  padding: 0.15em 0.4em;
+  border: 1px solid #E6EAEA;
+}
+
+.prose-editor pre {
+  background: #012A2D;
+  color: #E6EAEA;
+  padding: 1em;
+  overflow-x: auto;
+  margin: 0.75em 0;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.prose-editor pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+.prose-editor blockquote {
+  border-left: 3px solid #17E88F;
+  margin: 0.75em 0;
+  padding: 0.5em 1em;
+  background: #F5F7F7;
+  color: #435254;
+}
+
+.prose-editor table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  font-size: 0.8125rem;
+}
+
+.prose-editor th,
+.prose-editor td {
+  border: 1px solid #E6EAEA;
+  padding: 0.5em 0.75em;
+  text-align: left;
+  min-width: 80px;
+}
+
+.prose-editor th {
+  background: #F5F7F7;
+  font-weight: 600;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666666;
+}
+
+.prose-editor a {
+  color: #003F2D;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.prose-editor a:hover {
+  color: #17E88F;
+}
+
+.prose-editor hr {
+  border: none;
+  border-top: 1px solid #E6EAEA;
+  margin: 1.25em 0;
+}
+
+.prose-editor:empty::before {
+  content: attr(data-placeholder);
+  color: #999;
+  pointer-events: none;
+}
